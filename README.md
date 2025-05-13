@@ -1,94 +1,33 @@
+# Sales Analysis Dashboard
 
-# 📊 Sales Analysis Project – PostgreSQL + Power BI
+## Overview
+This project analyzes sales data to uncover key insights that can help improve business performance. The dashboard visualizes critical metrics such as sales by region, top-performing products, and trends over time, allowing for data-driven decision-making.
 
-This project is a comprehensive **Sales Data Analysis** solution built using **PostgreSQL** for backend data handling and **Power BI** for interactive visualization. The dataset, consisting of over 2 million rows, is sourced from raw `.txt` files representing real-world sales data.
+## Business Problem
+The goal of this project is to help a retail company identify underperforming regions and products. By providing a clear, actionable overview of sales performance, the dashboard aims to support business strategies, including inventory management, marketing, and sales optimizations.
 
-## 🔧 Tools & Technologies
+## Tools Used
+- **Power BI** for creating interactive dashboards and visualizations
+- **Excel** for initial data cleaning and analysis
+- **SQL** for querying the database
+- **DAX** for creating calculated fields and measures
 
-- **PostgreSQL** – for data storage, querying, and transformation
-- **Power BI** – for building dynamic dashboards and visual reports
-- **Text Files (.txt)** – raw data source
-- **SQL** – for cleaning, joining, and calculating KPIs
+## Key Insights
+- **Region B** shows a significant drop in sales during Q3, indicating a possible market shift or seasonal issue.
+- **Product A** performs exceptionally well in **Region C** but struggles in **Region A**, suggesting a need for targeted promotions.
+- **Sales trend** analysis reveals a steady overall growth pattern, but with seasonal dips that need to be addressed in marketing strategies.
 
-## 🧱 Database Schema
+## How to View the Project
+1. **Power BI**: Open the `.pbix` file in Power BI Desktop to view the interactive dashboard.
+2. **Data Files**: The dataset and SQL queries used are included in this repository for reference.
+3. **Additional Files**: Excel sheets used for preliminary data cleaning are available for download.
 
-The database uses a star schema and includes the following tables:
+## Future Work
+- Incorporating **marketing campaign data** to assess the impact of promotions on sales.
+- Adding **predictive models** to forecast future sales trends based on historical data.
+- Expanding the analysis to include customer demographic information for deeper insights.
 
-- `fact_sales` – transaction-level sales data
-- `dim_customers` – customer demographic and ID information
-- `dim_products` – product catalog data
-- `dim_stores` – store location and type
-- `dim_dates` – calendar reference for time-based analysis
+## Screenshots
 
-## 📁 Project Structure
-
-```
-sales-analysis-project/
-│
-├── data/
-│   ├── dim_customers.txt
-│   ├── dim_products.txt
-│   ├── dim_stores.txt
-│   ├── dim_dates.txt
-│   └── fact_sales.txt
-│
-├── sql/
-│   ├── create_tables.sql
-│   ├── insert_data.sql
-│   ├── data_cleaning.sql
-│   ├── analysis_queries.sql
-│
-├── powerbi/
-│   └── SalesDashboard.pbix
-│
-├── report/
-│   └── Sales_Analysis_Report.docx
-│
-└── README.md
-```
-
-## 🚀 How to Use
-
-### Step 1: Set Up PostgreSQL
-
-1. Create a new PostgreSQL database (e.g., `sales_db`).
-2. Run `create_tables.sql` to set up the schema.
-3. Use `insert_data.sql` to load data from `.txt` files (adjust paths and delimiters as needed).
-
-Example `COPY` command:
-```sql
-COPY dim_customers FROM '/path/to/dim_customers.txt' DELIMITER ',' CSV HEADER;
-```
-
-### Step 2: Clean & Transform Data
-
-- Run `data_cleaning.sql` to standardize, format, and prepare the data for analysis.
-
-### Step 3: Run SQL Analysis
-
-- Use `analysis_queries.sql` to generate insights and KPIs such as:
-  - Total sales and revenue
-  - Best-selling products
-  - Sales by region and time period
-  - Customer segmentation
-
-### Step 4: Power BI Visualization
-
-1. Open `SalesDashboard.pbix` in Power BI Desktop.
-2. Connect to your PostgreSQL instance.
-3. Refresh the data to load live visualizations.
-
-## 📈 Key Insights
-
-- Revenue trends by month, region, and store
-- Product and category-level sales performance
-- Top customer segments and purchasing behaviors
-- Growth patterns and business opportunities
-
-## 📄 Documentation
-
-For detailed explanations, SQL logic, and insights, refer to the full report located in:
-
-```
-/report/Sales_Analysis_Report.docx
-```
+![Sales Trends](screenshots/sales_trends.png)
+![Product Performance](screenshots/product_performance.png)
